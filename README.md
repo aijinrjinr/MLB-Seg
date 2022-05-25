@@ -1,4 +1,6 @@
-# MLB-Seg
+# Meta-Learning for Bootstrapping Medical Image Segmentation from Imperfect Supervision (MLB-Seg)
+
+Pytorch implementation for MLB-Seg
 
 ### Data 
 all data will be stored in a folder ```data``` 
@@ -28,3 +30,8 @@ XX.npy
   ├──'img'
   └──'label'
 ```
+### Train
+```
+python train.py --dataset Prostate --train_root ./data/Prostate/train/  --meta_root ./data/Prostate/meta_train/ --vali_root ./data/Prostate/original_data/ --checkpoint ./checkpoint/pretrained_model.pth
+```
+* store the pretrained model (training on the meta set) in ```checkpoint``` folder
