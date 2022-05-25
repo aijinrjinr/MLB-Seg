@@ -3,7 +3,7 @@
 Pytorch implementation for MLB-Seg
 
 ### Data 
-all data will be stored in a folder ```data``` 
+All data will be stored in a folder ```data``` 
 ```
  MLB-Seg (our repo)
     ├── data├── LA├──train
