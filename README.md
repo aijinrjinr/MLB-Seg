@@ -25,7 +25,7 @@ XX.npy
   ├──'label'
   └──'noisy_label'
 ```
-* 'img' represents the original slice, 'label' is the ground-truth segmentation and 'noisy_label' is the imperfect label (could be noisy annotations or generated labels for unlabelde data)
+* 'img' represents the original slice, 'label' is the ground-truth segmentation and 'noisy_label' is the imperfect label (could be noisy annotations or generated labels for unlabelde data).
 * For data in ```meta_train```, make sure it has the format shown below
 ```
 XX.npy
@@ -44,5 +44,5 @@ split_info.mat
 ```
 python train.py --dataset Prostate --train_root ./data/Prostate/train/  --meta_root ./data/Prostate/meta_train/ --vali_root ./data/Prostate/original_data/ --checkpoint ./checkpoint/pretrained_model.pth --datasplitpath ./data/Prostate/split_info.mat
 ```
-* Store the pretrained model (training on the meta set) in ```checkpoint``` folder
+* Store the pretrained model (training on the meta set) in ```checkpoint``` folder.
 
