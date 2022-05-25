@@ -7,6 +7,7 @@ all data will be stored in a folder ```data```
     ├── data├── LA├──train
             |     ├──meta_train
             |     └──original_data
+            |
             └── Prostate├──train
                         ├──meta_train
                         └──original_data
@@ -25,5 +26,5 @@ XX.npy
 ```
 XX.npy
   ├──'img'
-  ├──'label'
+  └──'label'
 ```
