@@ -545,9 +545,9 @@ def get_aug_image(image, gt, gtmasks, picksize=[5, 10, 15, 20]):
         padsizeoutall = random.sample(picksize, 2)
         outsize.append(padsizeoutall)
         padsizeout = padsizeoutall[0]
-        reshape = [h - 2 * padsizeout, w - 2 * padsizeout] #[w - 2 * padsizeout, h - 2 * padsizeout]
+        reshape = [h - 2 * padsizeout, w - 2 * padsizeout] 
         img = cv2.resize(imgori, reshape)
-        #print(img.min(), img.max())
+       
         imgr = np.zeros([w, h]) #+ img.min()
         gtimg = cv2.resize(gtori, reshape)
         gtimgr = np.zeros([w, h])
@@ -561,10 +561,10 @@ def get_aug_image(image, gt, gtmasks, picksize=[5, 10, 15, 20]):
         gtmasksall[2, :, :, :] = torch.tensor(gtmasksimgr).cuda()
 
         padsizeout = padsizeoutall[1]
-        reshape = [h - 2 * padsizeout, w - 2 * padsizeout]  # [w - 2 * padsizeout, h - 2 * padsizeout]
+        reshape = [h - 2 * padsizeout, w - 2 * padsizeout] 
         img = cv2.resize(imgori, reshape)
-        # print(img.min(), img.max())
-        imgr = np.zeros([w, h])  # + img.min()
+       
+        imgr = np.zeros([w, h])  
         gtimg = cv2.resize(gtori, reshape)
         gtimgr = np.zeros([w, h])
         gtmasksimg = cv2.resize(gtmasksori, reshape)
