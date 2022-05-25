@@ -11,8 +11,8 @@ all data will be stored in a folder ```data```
                         ├──meta_train
                         └──original_data
 ```
-* Please download the original LA/PROMISE12 dataset in its corresponding ```original_data``` folder which would be used during validation.
-* Store each 2D slice in the training set in the corresponding ```train``` folder and each 2D slice in the meta set in the corresponding ```meta_train``` folder.
+* Please download the original LA/PROMISE12 dataset and put it in the corresponding ```original_data``` folder which would be used during validation.
+* Store each 2D slice from the training set in the corresponding ```train``` folder and each 2D slice from the meta set in the corresponding ```meta_train``` folder.
 * For data in ```train```, make sure it has the format shown below
 ```
 XX.npy
