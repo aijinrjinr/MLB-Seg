@@ -8,11 +8,13 @@ all data will be stored in a folder ```data```
  MLB-Seg (our repo)
     ├── data├── LA├──train
             |     ├──meta_train
-            |     └──original_data
+            |     ├──original_data
+            |     └──split_info.mat
             |
             └── Prostate├──train
                         ├──meta_train
-                        └──original_data
+                        ├──original_data
+                        └──split_info.mat
 ```
 * Please download the original LA/PROMISE12 dataset and put it in the corresponding ```original_data``` folder which would be used during validation.
 * Store each 2D slice from the training set in the corresponding ```train``` folder and each 2D slice from the meta set in the corresponding ```meta_train``` folder.
@@ -30,8 +32,17 @@ XX.npy
   ├──'img'
   └──'label'
 ```
+* split_info.mat store the information (name) for each partient in the training/meta/validation set which has the format shown below
+```
+split_info.mat
+  ├──'train'
+  ├──'meta'
+  └──'test'
+```
+
 ### Train
 ```
-python train.py --dataset Prostate --train_root ./data/Prostate/train/  --meta_root ./data/Prostate/meta_train/ --vali_root ./data/Prostate/original_data/ --checkpoint ./checkpoint/pretrained_model.pth
+python train.py --dataset Prostate --train_root ./data/Prostate/train/  --meta_root ./data/Prostate/meta_train/ --vali_root ./data/Prostate/original_data/ --checkpoint ./checkpoint/pretrained_model.pth --datasplitpath ./data/Prostate/split_info.mat
 ```
-* store the pretrained model (training on the meta set) in ```checkpoint``` folder
+* Store the pretrained model (training on the meta set) in ```checkpoint``` folder
+
