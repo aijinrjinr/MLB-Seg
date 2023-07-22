@@ -1,4 +1,4 @@
-# Meta-Learning for Bootstrapping Medical Image Segmentation from Imperfect Supervision (MLB-Seg)
+# Consistency-guided Meta-Learning for Bootstrapping Semi-Supervised Medical Image Segmentation (MLB-Seg)
 
 Pytorch implementation for MLB-Seg
 
