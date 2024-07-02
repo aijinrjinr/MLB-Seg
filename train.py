@@ -66,7 +66,7 @@ parser.add_argument('--meta_step', type=int, default=1,
 parser.add_argument('--hard_weight', action='store_true')
 
 ROOT = os.getcwd()
-SAVE_CHECKPOINT = './best_model/'
+SAVE_CHECKPOINT = './saved_model/'
 
 if not os.path.isdir(SAVE_CHECKPOINT):
     os.mkdir(SAVE_CHECKPOINT)
