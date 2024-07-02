@@ -327,25 +327,22 @@ def main(args):
         dice, test_loss = val(epoch, testloader, net, writer, args)
 
         scheduler.step()
-
+        state = {
+                    'net': net.state_dict(),
+                    'dice': dice,
+                    'epoch': epoch,
+                }
+        torch.save(state,
+                   SAVE_CHECKPOINT + 'Newest_model.pth', _use_new_zipfile_serialization=False)
         if dice > best_dice:
-            print('Saving..')
-            state = {
-                'net': net.state_dict(),
-                'dice': dice,
-                'epoch': epoch,
-            }
-            if not os.path.isdir(SAVE_CHECKPOINT):
-                os.mkdir(SAVE_CHECKPOINT)
-            torch.save(state,
-                       SAVE_CHECKPOINT + 'best_model.pth', _use_new_zipfile_serialization=False)
             best_dice = dice
-
+        
         print('-----------------------------------------------------')
         print('At epoch: {:03d} CURRENT loss: {:.4f}'.format(epoch, test_loss.avg))
-        print('At epoch: {:03d} BEST accuracy: {:.4f}'.format(epoch, best_dice))
-        print('At epoch: {:03d} CURRENT accuracy: {:.4f}'.format(epoch, dice))
+        print('At epoch: {:03d} BEST dice: {:.4f}'.format(epoch, best_dice))
+        print('At epoch: {:03d} CURRENT dice: {:.4f}'.format(epoch, dice))
         print('-----------------------------------------------------')
+
 
 
 
