@@ -68,7 +68,9 @@ parser.add_argument('--hard_weight', action='store_true')
 ROOT = os.getcwd()
 SAVE_CHECKPOINT = './best_model/'
 
-
+if not os.path.isdir(SAVE_CHECKPOINT):
+    os.mkdir(SAVE_CHECKPOINT)
+  
 def create_ema_model(model):
     # Network definition
     for param in model.parameters():
